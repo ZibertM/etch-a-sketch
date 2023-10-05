@@ -9,18 +9,35 @@
 </head>
 <body>
     <div id="container">
-        <div id="options">
-            <button id="clear-canvas-button" class="option-buttons">Clear canvas</button>
-            <button id="toggle-draw-button" class="option-buttons">Hover draw</button>
+        <div id="title-div">
+            <h1>ETCH-A-SKETCH</h1>
         </div>
-        <div id="canvas"></div>
-        <div id="colors">
-            <div id="color-picker-div">
-                <label for="color-picker" class="colors-labels">Pick a color</label>
-                <input type="color" id="color-picker" value="#FFBF00">
+        <div id="content">
+            <div id="options">
+                <label for="size-slider">Size</label>
+                <span id="slider-value"></span>
+                <input id="size-slider" type="range" min="20" max="100" value="40">
+                <button id="clear-canvas-button" class="option-buttons">Clear canvas</button>
+                <button id="toggle-draw-button" class="option-buttons"><span style="font-weight: bold; font-size: 24px;">Hover / </span><span style="font-size: 14px;">Drag</span></button>
+                <button id="toggle-circle-square"><span style="font-weight: bold; font-size: 24px;">Square / </span><span style="font-size: 14px;">Circle</span></button>
             </div>
-            <button id="random-button">Random color</button>
-        </div>
+            <div id="mask">
+                <div id="canvas"></div>
+            </div>
+            <div id="colors">
+                <div id="color-picker-div">
+                    <label for="color-picker" class="colors-labels">Brush color</label>
+                    <input type="color" id="color-picker">
+                    <button id="random-button">Random color</button>
+                    <button id="rainbow-button">Rainbow</button>
+                </div>
+                <div id="background-color-div">
+                    <label for="background-color-picker" class="colors-labels">Background color</label>
+                    <input type="color" id="background-color-picker">
+                    <button id="background-color-button">Background color</button>
+                </div>
+            </div>
+        </div> 
     </div>
 </body>
 </html>

@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'dripping-marker';
+    src: url('./fonts/a-dripping-marker-font/ADrippingMarker-Ddw1.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
 body {
     margin: 0;
 }
@@ -5,17 +13,26 @@ body {
 #container {
     display: flex;
     justify-content: space-evenly;
-    width: 100vw;
+    align-items: center;
+    flex-direction: column;
     height: 100vh;
+    width: 100vw;
+    background: linear-gradient(azure, aquamarine);
     background-color: azure;
     cursor: default;
+}
+
+#content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
 }
 
 #options, #colors {
     display: flex;
     flex-shrink: 0;
     flex-direction: column;
-    background-color: azure;
     width: 20%;
     height: 100%;
     align-items: center;
@@ -23,55 +40,82 @@ body {
     gap: 16px;
 }
 
-
+#colors {
+    gap: 36px;
+}
 
 #canvas {
     display: flex;
     flex-shrink: 0;
-    width: 800px;
-    height: 800px;
-    border: 2px solid blue;
+    width: 700px;
+    height: 700px;
+    border: 2px solid cadetblue;
     border-radius: 8px;
+    overflow: hidden;
     align-self: center;
     flex-wrap: wrap;
 }
 
 .cells {
-    transition: background-color 0.2s linear;
+    transition: background-color 0.2s ease;
 }
 
 button {
     height: 60px;
     width: 70%;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
-    background-color: pink;
+    background-color: deepskyblue;
     border-radius: 6px;
+    color: saddlebrown;
 }
 
-#color-picker {
+button:active {
+    background-color: bisque;
+    transition: background-color 0.1s ease;
+}
+
+input {
     width: 100px;
     height: 50px;
     flex-shrink: 0;
 }
 
-.colors-labels {
-    font-size: 18px;
+label {
+    font-size: 28px;
     font-weight: bold;
+    font-style: oblique;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-#color-picker-div {
+#title-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+}
+
+h1 {
+    font-family: 'dripping-marker';
+    font-size: 100px;
+    margin: 0;
+    padding: 12px;
+}
+
+#color-picker-div, #background-color-div {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
 
 }
 
-#rainbow-div {
+#mask {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 704px;
+    height: 704px;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
